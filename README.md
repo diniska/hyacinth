@@ -1,6 +1,6 @@
 # Hyacinth
 
-![Hyacinth, watercolor, pencil drawing](resources/header.jpg)
+![Hyacinth, watercolor, pencil drawing](Resources/header.jpg)
 
 This repository contains a collection of macros designed to enhance productivity and safety in Xcode development. Currently, it features the `#URL` macro, which provides a safer alternative to URL creation by validating URLs at compile time.
 
