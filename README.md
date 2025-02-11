@@ -14,6 +14,16 @@ The `#URL` macro offers a secure method to create URLs from string literals. It 
 
 #### Usage
 
+#### Usage
+
+To use the `#URL` macro, import the `Hyacinth` module in your Swift file:
+
+```swift
+import Hyacinth
+```
+
+Then, you can create URLs safely:
+
 ```swift
 let url = #URL("https://example.com")
 ```
