@@ -34,6 +34,23 @@ let url = URL(string: "https://example.com")!
 
 However, the `#URL` macro ensures that the URL is valid at compile time, providing an additional layer of safety.
 
+## Getting Started
+
+To get started with these macros, follow the instructions below:
+
+1. **Clone the Repository**: Clone this repository to your local machine.
+2. **Integrate with Xcode**: Follow the integration steps to use these macros in your Xcode project. When you first use the macros, Xcode will show a dialog:
+
+   ```
+   "HyacinthMacros" must be enabled before it can be used. Enable it now?
+   ```
+
+   You are advised to read the macro code before pressing the "Trust & Enable" button. For more details, see the screenshot below:
+   
+   <img src="Resources/xcode-macro-safety-request.png" alt="How to enable Xcode Macro" width="300"/>
+
+3. **Start Using Macros**: Use the `#URL` macro in your code to ensure safe URL creation.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
