@@ -51,6 +51,18 @@ To get started with these macros, follow the instructions below:
 
 3. **Start Using Macros**: Use the `#URL` macro in your code to ensure safe URL creation.
 
+## Running on CI
+
+To enable the macros on CI add the following line to your build steps:
+
+```sh
+defaults write com.apple.dt.Xcode IDESkipMacroFingerprintValidation -bool YES
+```
+
+### Xcode Cloud
+
+For Xcode cloud this line could be added to file `ci_scripts/ci_post_clone.sh`
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
