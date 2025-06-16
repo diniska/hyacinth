@@ -47,6 +47,11 @@ extension SwiftUIEnvironmentKeyMacro: PeerMacro {
         
         binding.pattern = PatternSyntax(IdentifierPatternSyntax(identifier: .identifier("defaultValue")))
         
+        if binding.typeAnnotation?.type.is(OptionalTypeSyntax.self) == true,
+           binding.initializer == nil {
+            binding.initializer = InitializerClauseSyntax(value: NilLiteralExprSyntax())
+        }
+        
         return [
             """
             private struct EnvironmentKey_\(identifier): EnvironmentKey {
@@ -65,9 +70,9 @@ extension SwiftUIEnvironmentKeyMacro: AccessorMacro {
             let binding = variableDeclaration.bindings.first
         else { return [] }
         
-        guard binding.initializer != nil
-        else {
-            throw HyacinthError.initialValueIsMissing(diagnostic: "@EnvironmentKey macro requires an initial value.")
+        if binding.typeAnnotation?.type.is(OptionalTypeSyntax.self) == false,
+           binding.initializer == nil {
+            throw HyacinthError.initialValueIsMissing(diagnostic: "@EnvironmentKey macro requires an initial value for not optional types")
         }
 
         guard let identifier = variableDeclaration.bindings.first?.pattern.as(IdentifierPatternSyntax.self)?.identifier.trimmed

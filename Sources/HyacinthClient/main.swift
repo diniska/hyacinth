@@ -7,5 +7,5 @@ import SwiftUI
 
 extension EnvironmentValues {
     @EnvironmentKey
-    var value = 0
+    var value: Int?
 }
