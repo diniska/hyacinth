@@ -7,7 +7,7 @@ This repository contains a collection of macros designed to enhance productivity
 ## Features
 
 - **`#URL` Macro**: A safer way to create URLs from string literals, ensuring validity at compile time.
-- **`@EnvironmentKey` Macro**: Easily define custom SwiftUI environment keys and storage with less boilerplate.
+- **`@EnvironmentKey` Macro**: Define custom SwiftUI environment keys and storage with less boilerplate.
 
 ### `#URL` Macro
 
