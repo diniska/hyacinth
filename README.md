@@ -2,11 +2,12 @@
 
 ![Hyacinth, watercolor, pencil drawing](Resources/header.jpg)
 
-This repository contains a collection of macros designed to enhance productivity and safety in Xcode development. Currently, it features the `#URL` macro, which provides a safer alternative to URL creation by validating URLs at compile time.
+This repository contains a collection of macros designed to enhance productivity and safety in Xcode development. Currently, it features the `#URL` macro, which provides a safer alternative to URL creation by validating URLs at compile time, and the `@EnvironmentKey` macro, which simplifies defining custom SwiftUI environment keys.
 
 ## Features
 
 - **`#URL` Macro**: A safer way to create URLs from string literals, ensuring validity at compile time.
+- **`@EnvironmentKey` Macro**: Define custom SwiftUI environment keys and storage with less boilerplate.
 
 ### `#URL` Macro
 
@@ -33,6 +34,32 @@ let url = URL(string: "https://example.com")!
 ```
 
 However, the `#URL` macro ensures that the URL is valid at compile time, providing an additional layer of safety.
+
+### `@EnvironmentKey` Macro
+
+The `@EnvironmentKey` macro helps you define custom SwiftUI environment keys and their storage with minimal boilerplate. It generates the necessary key struct and accessors for use with SwiftUI's environment system.
+
+#### Usage
+
+To use the `@EnvironmentKey` macro, import the `Hyacinth` module and apply the macro to a variable inside an `EnvironmentValues` extension:
+
+```swift
+import Hyacinth
+
+extension EnvironmentValues {
+    @EnvironmentKey
+    var value: Int = 1
+}
+```
+
+This will generate:
+
+- An `EnvironmentKey_value` struct conforming to `EnvironmentKey`
+- Storage and accessors for `value`
+
+You can then use `value` with SwiftUI's `@Environment` property wrapper.
+
+> **Note:** The macro must be applied to a variable inside `EnvironmentValues`.
 
 ## Getting Started
 

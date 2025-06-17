@@ -12,3 +12,7 @@ import Foundation
 /// but is checked at compile time to be a valid URL.
 @freestanding(expression)
 public macro URL(_ string: String) -> URL = #externalMacro(module: "HyacinthMacros", type: "URLMacro")
+
+@attached(accessor)
+@attached(peer, names: arbitrary)
+public macro EnvironmentKey() = #externalMacro(module: "HyacinthMacros", type: "SwiftUIEnvironmentKeyMacro")

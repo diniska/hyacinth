@@ -12,5 +12,6 @@ import SwiftSyntaxMacros
 struct HyacinthPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
         URLMacro.self,
+        SwiftUIEnvironmentKeyMacro.self,
     ]
 }

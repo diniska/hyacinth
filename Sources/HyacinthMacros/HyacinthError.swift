@@ -8,4 +8,5 @@
 enum HyacinthError: Error {
     case malformedUrl(url: String)
     case malformedUrlLiteral(url: String)
+    case initialValueIsMissing(diagnostic: String)
 }
