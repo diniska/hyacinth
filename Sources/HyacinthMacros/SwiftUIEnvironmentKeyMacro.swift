@@ -80,7 +80,7 @@ extension SwiftUIEnvironmentKeyMacro: AccessorMacro {
         
         return [
             "get { self[EnvironmentKey_\(identifier).self] }",
-            "set { self[EnvironmentKey_\((identifier)).self] = newValue }",
+            "set { self[EnvironmentKey_\(identifier).self] = newValue }",
         ]
     }
 }
